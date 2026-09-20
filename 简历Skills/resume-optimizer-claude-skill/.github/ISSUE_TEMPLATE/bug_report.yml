@@ -1,0 +1,79 @@
+name: Bug report
+description: Report unexpected behavior from the Resume Optimizer skill or MCP server.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to file a bug report. Please fill in as much
+        as you can — the more we can reproduce, the faster we can fix.
+
+        **If the bug is "the skill fabricated a metric/employer/date":** that's
+        a release-blocker. Please label this issue with `fabrication` after
+        filing.
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: A concise description of the unexpected behavior.
+      placeholder: The skill produced X, but I expected Y.
+    validations:
+      required: true
+  - type: textarea
+    id: prompt
+    attributes:
+      label: Prompt used
+      description: The exact user message you sent. Redact personal info.
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: input
+    attributes:
+      label: Resume input
+      description: |
+        The resume text you provided to the skill. Redact name, employer
+        names, contact info — keep the structural elements that triggered
+        the bug.
+      render: markdown
+    validations:
+      required: false
+  - type: textarea
+    id: output
+    attributes:
+      label: Skill output
+      description: |
+        The skill's response. If too long to paste, share the parts most
+        relevant to the bug.
+      render: markdown
+    validations:
+      required: false
+  - type: dropdown
+    id: host
+    attributes:
+      label: Claude host
+      description: Where did you encounter the bug?
+      options:
+        - Claude Code (CLI)
+        - Claude Desktop
+        - claude.ai
+        - Anthropic API directly
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: model
+    attributes:
+      label: Model used (if known)
+      placeholder: e.g. claude-opus-4-7
+  - type: input
+    id: version
+    attributes:
+      label: Skill version
+      description: From CHANGELOG.md or the release tag you installed.
+      placeholder: e.g. 0.1.0
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional context
+      description: Anything else that would help us reproduce.

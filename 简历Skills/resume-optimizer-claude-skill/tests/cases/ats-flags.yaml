@@ -1,0 +1,21 @@
+name: ats-flags
+description: |
+  The skill must detect ATS landmines in the input. The sample resume has a
+  table-based skills layout (ats-rules.md hard rule §1), icon glyphs (rule §4),
+  bias-risk personal info (recruiter-checklist.md red flags), and contact info
+  partially relying on icons.
+prompt: |
+  ATS optimize my resume. List every ATS risk you find.
+inputs:
+  resume: fixtures/sample-resume.md
+assertions:
+  # The ATS findings section must be present and non-empty.
+  - section_present: "## 3. ATS findings"
+  # The skill should flag the table.
+  - contains: "(?i)(table|columns?)"
+  # The skill should flag the icon glyphs.
+  - contains: "(?i)(icon|emoji)"
+  # The skill should flag the personal/bias content.
+  - contains: "(?i)(date of birth|nationality|marital|photo|personal)"
+  # And classify findings by High/Medium/Low risk per ats-rules.md.
+  - contains: "(?i)(high|medium|low)"

@@ -1,0 +1,16 @@
+name: activation
+description: |
+  The skill must activate on the documented trigger phrases and produce both
+  artifacts (rewrite + report) without the user having to ask for them
+  explicitly.
+prompt: |
+  Review my resume.
+inputs:
+  resume: fixtures/sample-resume.md
+assertions:
+  # The output must contain both artifacts, with the separator between them.
+  - contains: "^---$"
+  # The report's score table is the most reliable structural marker.
+  - section_present: "## 1. Scores"
+  # The skill must produce some bullet-rewrite section.
+  - section_present: "## 5. Bullet rewrites"

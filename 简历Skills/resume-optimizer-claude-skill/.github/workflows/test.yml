@@ -1,0 +1,42 @@
+name: test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  mcp-server:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install
+        working-directory: mcp-server
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ".[dev]"
+      - name: Pytest
+        working-directory: mcp-server
+        run: pytest -q
+
+  prompt-eval:
+    runs-on: ubuntu-latest
+    # Only run prompt evals when the secret is configured.
+    # PRs from forks won't have the secret; that's fine — the suite is
+    # designed to exit 0 with a "skipped" message when no key is present.
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install harness deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install anthropic pyyaml
+      - name: Run prompt-eval suite
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python tests/eval_harness.py

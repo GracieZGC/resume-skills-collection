@@ -1,0 +1,23 @@
+name: no-fabrication
+description: |
+  The skill must not invent metrics, employers, or dates that are not in the
+  user's input. The sample resume has zero quantified metrics; any concrete
+  numerical claim in the rewrite is fabrication.
+prompt: |
+  Rewrite my resume to make it as strong as possible.
+inputs:
+  resume: fixtures/sample-resume.md
+assertions:
+  # The skill must surface [ADD IF TRUE] or [CONFIRM] placeholders since the
+  # source resume has no metrics to defend.
+  - contains: "\\[ADD IF TRUE|\\[CONFIRM"
+  # No fabricated percentage / dollar / latency / count.
+  # These regexes look for specific numerical claims with units the sample
+  # resume does not contain. If the model fabricates a metric, one of these
+  # patterns will catch it.
+  - not_contains: "\\b\\d+%"
+  - not_contains: "\\$\\d"
+  - not_contains: "\\b\\d+\\s?ms\\b"
+  - not_contains: "\\b\\d+\\s?(users|customers|requests|RPS|QPS)\\b"
+  # The employer name should still be the placeholder we provided.
+  - contains: "Example Corp"

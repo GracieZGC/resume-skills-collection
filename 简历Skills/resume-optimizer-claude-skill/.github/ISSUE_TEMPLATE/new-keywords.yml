@@ -1,0 +1,61 @@
+name: New keywords
+description: Suggest additions to one of the domain keyword files under resources/keywords/.
+labels: ["keywords"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping keep the keyword vocabulary current.
+
+        Before filing, please read [`docs/adding-keywords.md`](../../docs/adding-keywords.md)
+        — there's a 3-criteria test for what counts as a keyword and a
+        "do not add" list. Most rejected additions are tools that aren't
+        searched for (Notion, Slack), buzzwords, or generic methodologies
+        (Agile, Scrum).
+  - type: dropdown
+    id: file
+    attributes:
+      label: Which file?
+      options:
+        - resources/keywords/software-engineering.md
+        - resources/keywords/backend.md
+        - resources/keywords/frontend.md
+        - resources/keywords/ai-ml.md
+        - resources/keywords/devops.md
+        - resources/keywords/cloud.md
+        - resources/keywords/data-science.md
+        - resources/keywords/research.md
+    validations:
+      required: true
+  - type: textarea
+    id: terms
+    attributes:
+      label: Keywords to add
+      description: One per line. If proposing a new section, mark it like `## New section name`.
+      placeholder: |
+        Apache Iceberg
+        Apache Hudi
+        ## Lakehouse-specific
+        Delta Lake
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Where are these searched / used?
+      description: |
+        Briefly justify each (or the batch). Job postings, ATS searches,
+        recruiter inbox patterns, recent industry shifts — anything that
+        passes the "recruiters search for it" test in
+        [docs/adding-keywords.md](../../docs/adding-keywords.md).
+    validations:
+      required: true
+  - type: dropdown
+    id: willingness
+    attributes:
+      label: Are you willing to open the PR yourself?
+      options:
+        - "Yes — I'll open the PR"
+        - "No — please pick up if interested"
+    validations:
+      required: true

@@ -1,0 +1,18 @@
+name: report-structure
+description: |
+  Every report must contain all 8 numbered sections from report-template.md,
+  in order. This is the most load-bearing structural contract for downstream
+  tooling.
+prompt: |
+  Review my resume and produce the full report.
+inputs:
+  resume: fixtures/sample-resume.md
+assertions:
+  - section_present: "## 1. Scores"
+  - section_present: "## 2. Formatting findings"
+  - section_present: "## 3. ATS findings"
+  - section_present: "## 4. Section-level weaknesses"
+  - section_present: "## 5. Bullet rewrites"
+  - section_present: "## 6. Gap analysis"
+  - section_present: "## 7. Questions for the user"
+  - section_present: "## 8. Change log"

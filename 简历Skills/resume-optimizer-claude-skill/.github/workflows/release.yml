@@ -1,0 +1,42 @@
+name: release
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+permissions:
+  contents: write
+
+jobs:
+  github-release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Build release notes from CHANGELOG.md
+        id: notes
+        run: |
+          tag="${GITHUB_REF#refs/tags/v}"
+          # Extract the section for this version from CHANGELOG.md.
+          # Falls back to the release-notes template if the section is missing.
+          if grep -q "^## \[$tag\]" CHANGELOG.md; then
+            awk -v ver="$tag" '
+              $0 ~ "^## \\[" ver "\\]" { inside=1; next }
+              inside && /^## \[/ { exit }
+              inside { print }
+            ' CHANGELOG.md > release-notes.md
+          else
+            cp .github/release-notes-template.md release-notes.md
+          fi
+          echo "tag=$tag" >> "$GITHUB_OUTPUT"
+
+      - name: Create GitHub release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: v${{ steps.notes.outputs.tag }}
+          body_path: release-notes.md
+          draft: false
+          prerelease: false
