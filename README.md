@@ -37,6 +37,6 @@
 - [`resume-md-skill`](https://github.com/beholder91/resume-md-skill)：Markdown 简历转换和本地 PDF 渲染。
 - [`resume-tailor`](https://github.com/nuin/resume-tailor)：另一套独立的岗位定制 Skill。
 
-完整口播稿、详细分类说明和安装提示见[《简历 Skill 分类与来源》](./简历Skill分类与来源.md)。相关项目文件统一放在[`简历Skills/`](./简历Skills/)目录中。
+相关项目文件统一放在[`简历Skills/`](./简历Skills/)目录中。
 
 > 提醒：Skill 的功能、安装方式和仓库内容可能更新。使用前请查看对应项目的最新说明；不要让 AI 编造经历、数据或技能。
