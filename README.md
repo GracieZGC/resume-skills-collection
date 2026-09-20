@@ -11,7 +11,7 @@
 | 没有完整简历，只有流水账或零散材料 | 信息整合 | [`resume-builder`](https://github.com/Jichengyuuuuu/resume-builder-skill) | 收集经历、整理材料、生成简历初稿 |
 | 已有简历，想投某个具体岗位 | 岗位定制 | [`resume-tailoring`](https://github.com/varunr89/resume-tailoring-skill) / [`resume-tailor`](https://github.com/nuin/resume-tailor) | 分析 JD，从真实经历中挑选并改写匹配内容 |
 | 简历内容空泛，不知道哪里需要改 | 内容诊断与重写 | [`resume-optimizer`](https://github.com/Sumukhmg/resume-optimizer-claude-skill) | 从 HR 阅读角度检查结构、表达和成果，并输出重写建议 |
-| 担心关键词、格式或招聘系统识别 | ATS 诊断 | `resume-ats-optimizer`（见 [`ResumeSkills`](https://github.com/Paramchoudhary/ResumeSkills)） | 检查关键词匹配、文件解析和 ATS 兼容风险 |
+| 担心关键词、格式或招聘系统识别 | ATS 诊断 | [`resume-ats-optimizer`](https://github.com/davila7/claude-code-templates/blob/main/cli-tool/components/skills/career/resume-ats-optimizer/SKILL.md) | 检查关键词匹配、文件解析和 ATS 兼容风险 |
 | 内容已经确定，只想排版和导出 | 排版渲染 | [`resume-md`](https://github.com/beholder91/resume-md-skill) | 将 Markdown、DOCX 等材料整理并导出为结构清晰的 PDF |
 | 想一次获得多个简历相关模块 | 模块化工具箱 | [`ResumeSkills`](https://github.com/Paramchoudhary/ResumeSkills) | 将质检、改写、量化、JD 定制、排版和版本管理拆成独立模块，按需调用 |
 
@@ -32,6 +32,7 @@
 - [`resume-builder-skill`](https://github.com/Jichengyuuuuu/resume-builder-skill)：中文简历生成、HTML / DOCX 输出、ATS 和岗位定制。
 - [`resume-tailoring-skill`](https://github.com/varunr89/resume-tailoring-skill)：根据 JD 定制简历，并通过追问补充岗位相关经历。
 - [`resume-optimizer-claude-skill`](https://github.com/Sumukhmg/resume-optimizer-claude-skill)：简历审阅、重写、评分和 ATS 优化。
+- [`resume-ats-optimizer`](https://github.com/davila7/claude-code-templates/blob/main/cli-tool/components/skills/career/resume-ats-optimizer/SKILL.md)：ATS 检查与关键词优化。
 - [`ResumeSkills`](https://github.com/Paramchoudhary/ResumeSkills)：模块化简历与求职工具箱，可按需调用不同功能。
 - [`resume-md-skill`](https://github.com/beholder91/resume-md-skill)：Markdown 简历转换和本地 PDF 渲染。
 - [`resume-tailor`](https://github.com/nuin/resume-tailor)：另一套独立的岗位定制 Skill。

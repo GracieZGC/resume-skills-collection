@@ -80,9 +80,10 @@
 1. [Jichengyuuuuu/resume-builder-skill](https://github.com/Jichengyuuuuu/resume-builder-skill) — 中文简历生成、HTML / DOCX 输出、ATS 和岗位定制。
 2. [varunr89/resume-tailoring-skill](https://github.com/varunr89/resume-tailoring-skill) — 根据 JD 定制简历，支持经历发现和岗位匹配。
 3. [Sumukhmg/resume-optimizer-claude-skill](https://github.com/Sumukhmg/resume-optimizer-claude-skill) — 简历审阅、重写、评分和 ATS 优化。
-4. [Paramchoudhary/ResumeSkills](https://github.com/Paramchoudhary/ResumeSkills) — 模块化简历与求职工具箱，包含 `resume-ats-optimizer`、改写、量化、排版和版本管理等功能。
-5. [beholder91/resume-md-skill](https://github.com/beholder91/resume-md-skill) — 中文优先的 Markdown 简历转换与本地 PDF 渲染。
-6. [nuin/resume-tailor](https://github.com/nuin/resume-tailor) — 另一套独立的岗位定制 Skill，适合与 `resume-tailoring` 区分查看。
+4. [davila7/claude-code-templates — resume-ats-optimizer](https://github.com/davila7/claude-code-templates/blob/main/cli-tool/components/skills/career/resume-ats-optimizer/SKILL.md) — ATS 检查与关键词优化。
+5. [Paramchoudhary/ResumeSkills](https://github.com/Paramchoudhary/ResumeSkills) — 模块化简历与求职工具箱，包含改写、量化、排版和版本管理等功能。
+6. [beholder91/resume-md-skill](https://github.com/beholder91/resume-md-skill) — 中文优先的 Markdown 简历转换与本地 PDF 渲染。
+7. [nuin/resume-tailor](https://github.com/nuin/resume-tailor) — 另一套独立的岗位定制 Skill，适合与 `resume-tailoring` 区分查看。
 
 ## 使用顺序说明
 
