@@ -1,39 +1,41 @@
-# Resume Polish Interviewer v2.1
+# 简历 Skills Collection
 
-把熟练求职者常用的岗位拆解、经历素材访谈、证据核对和追问流程固化成一个跨平台简历 Skill。
+这是一份改简历 Skill 的分类、对比和安装资料，适合用来快速判断：自己现在应该使用哪一类工具。
 
-用户只需提供简历、目标岗位和可选 JD。Skill 会先处理现有信息，再针对最可能改变结果的经历提出最多三个具体回忆问题；不会用固定问卷阻塞开始，也不会把团队成果、推测或占位数字写成用户事实。
+## 先按问题选 Skill
 
-## 它解决什么问题
+改简历不是一个单一动作。不同 Skill 往往会有功能重叠，但通常各有一个主要用途：
 
-- 不知道应该怎样向 AI 描述自己的简历问题。
-- 不知道 JD 中哪些要求真正重要，哪些只是背景信息。
-- 没有漂亮数字，不知道怎样把真实贡献写具体。
-- 只记得“负责过什么”，想不起具体对象、范围、动作和结果。
-- 担心 AI 抬高职责、编造结果或机械堆关键词。
-- 想检查 PDF 页面层级和密度，但不想把视觉检查误称为 ATS 验证。
+| 你现在卡在哪里 | 主要用途 | 推荐 Skill | 适合解决的问题 |
+|---|---|---|---|
+| 没有完整简历，只有流水账或零散材料 | 信息整合 | [`resume-builder`](https://github.com/Jichengyuuuuu/resume-builder-skill) | 收集经历、整理材料、生成简历初稿 |
+| 已有简历，想投某个具体岗位 | 岗位定制 | [`resume-tailoring`](https://github.com/varunr89/resume-tailoring-skill) / [`resume-tailor`](https://github.com/nuin/resume-tailor) | 分析 JD，从真实经历中挑选并改写匹配内容 |
+| 简历内容空泛，不知道哪里需要改 | 内容诊断与重写 | [`resume-optimizer`](https://github.com/Sumukhmg/resume-optimizer-claude-skill) | 从 HR 阅读角度检查结构、表达和成果，并输出重写建议 |
+| 担心关键词、格式或招聘系统识别 | ATS 诊断 | `resume-ats-optimizer`（见 [`ResumeSkills`](https://github.com/Paramchoudhary/ResumeSkills)） | 检查关键词匹配、文件解析和 ATS 兼容风险 |
+| 内容已经确定，只想排版和导出 | 排版渲染 | [`resume-md`](https://github.com/beholder91/resume-md-skill) | 将 Markdown、DOCX 等材料整理并导出为结构清晰的 PDF |
+| 想一次获得多个简历相关模块 | 模块化工具箱 | [`ResumeSkills`](https://github.com/Paramchoudhary/ResumeSkills) | 将质检、改写、量化、JD 定制、排版和版本管理拆成独立模块，按需调用 |
 
-> AI 不是不会写，而是不知道你做过什么。先把经历问清楚，再让 AI 表达。
+## 怎么选择
 
-## 价值边界
+可以把它们理解成不同侧重的套餐：
 
-模型能力已经较成熟。熟练用户用清楚的人工提示，也可能获得同等或更好的结果。本项目要验证的价值是降低提示组织成本、减少漏步骤和事实错误，并提高不同对话及模型上的执行一致性。它不承诺面试邀请，也不声称通过视觉检查就能证明 ATS 兼容。
+1. 材料还没整理好，先用 `resume-builder`。
+2. 已经有简历但表达弱，用 `resume-optimizer` 做内容诊断和重写。
+3. 有目标岗位，再用 `resume-tailoring` 或 `resume-tailor` 做 JD 定制。
+4. 担心招聘系统读不懂，用 `resume-ats-optimizer` 做 ATS 检查。
+5. 内容确认后，再用 `resume-md` 排版和导出 PDF。
 
-## 两种使用方式
+这不是强制流程。已经有哪部分，就从下一步开始；不同 Skill 的功能会重叠，应以对应项目当前的 README、`SKILL.md` 和实际输出为准。
 
-- 支持 Skill 的平台：导入 `resume-polish-interviewer/`。
-- 普通聊天平台：复制 `通用提示词.txt` 的完整内容，再发送简历、目标岗位和可选 JD。
+## 项目来源与说明
 
-最短发起语：
+- [`resume-builder-skill`](https://github.com/Jichengyuuuuu/resume-builder-skill)：中文简历生成、HTML / DOCX 输出、ATS 和岗位定制。
+- [`resume-tailoring-skill`](https://github.com/varunr89/resume-tailoring-skill)：根据 JD 定制简历，并通过追问补充岗位相关经历。
+- [`resume-optimizer-claude-skill`](https://github.com/Sumukhmg/resume-optimizer-claude-skill)：简历审阅、重写、评分和 ATS 优化。
+- [`ResumeSkills`](https://github.com/Paramchoudhary/ResumeSkills)：模块化简历与求职工具箱，可按需调用不同功能。
+- [`resume-md-skill`](https://github.com/beholder91/resume-md-skill)：Markdown 简历转换和本地 PDF 渲染。
+- [`resume-tailor`](https://github.com/nuin/resume-tailor)：另一套独立的岗位定制 Skill。
 
-> 请帮我优化这份简历，让它更容易获得面试机会。
+完整口播稿、详细分类说明和安装提示见[《简历 Skill 分类与来源》](./简历Skill分类与来源.md)。相关项目文件统一放在[`简历Skills/`](./简历Skills/)目录中。
 
-## 公开验证
-
-`对照测试提示词与用例.md` 定义普通提问、熟练用户提示和 Skill 三组公平对照。`效果验证方案.md` 定义事实错误、岗位证据、信息取舍、可读性、追问负担和人工纠正等评估维度。
-
-当前状态：规则与测试方案已准备，尚未完成跨模型行为实验或真实面试结果验证。
-
-## 改简历 Skill 资源
-
-本项目附带一份与视频口播对应的 Skill 分类、选择表和来源链接，见[《简历 Skill 分类与来源》](./简历Skill分类与来源.md)。相关项目源码已统一放在 [`简历Skills/`](./简历Skills/) 目录中，便于查看和演示。
+> 提醒：Skill 的功能、安装方式和仓库内容可能更新。使用前请查看对应项目的最新说明；不要让 AI 编造经历、数据或技能。
